@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils'
 import { motion, type HTMLMotionProps } from 'framer-motion'
 import { forwardRef } from 'react'
+import React from 'react'
 
 type Variant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'success'
 type Size = 'sm' | 'md' | 'lg'
@@ -60,7 +61,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       {loading && (
         <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
       )}
-      {children}
+      {children as React.ReactNode}
     </motion.button>
   )
 )
